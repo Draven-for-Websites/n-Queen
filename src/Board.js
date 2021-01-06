@@ -179,9 +179,23 @@
     // --------------------------------------------------------------
     //
     // test if a specific major diagonal on this board contains a conflict
-    hasMajorDiagonalConflictAt: function (
-      majorDiagonalColumnIndexAtFirstRow
-    ) {},
+    hasMajorDiagonalConflictAt: function (majorDiagonalColumnIndexAtFirstRow) {
+      let counter = 0;
+      var index = majorDiagonalColumnIndexAtFirstRow;
+      console.log(index);
+      let n = this.attributes["n"];
+      for (var i = 0; i < n; i++) {
+        let row = this.get(i);
+        let col = row[index + i];
+        if (col === 1) {
+          counter++;
+        }
+      }
+      if (counter > 1) {
+        return true;
+      }
+      return false;
+    },
 
     // test if any major diagonals on this board contain conflicts
     hasAnyMajorDiagonalConflicts: function () {},
