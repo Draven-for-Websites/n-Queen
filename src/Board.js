@@ -198,7 +198,16 @@
     },
 
     // test if any major diagonals on this board contain conflicts
-    hasAnyMajorDiagonalConflicts: function () {},
+    hasAnyMajorDiagonalConflicts: function () {
+      let size = this.get("n");
+      for (let i = 0; i < size; i++) {
+        if (this.hasMajorDiagonalConflictAt(i)) {
+          return false;
+        }
+      }
+
+      return true;
+    },
 
     // Minor Diagonals - go from top-right to bottom-left
     // --------------------------------------------------------------
