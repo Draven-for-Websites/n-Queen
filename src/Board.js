@@ -164,7 +164,16 @@
     },
 
     // test if any columns on this board contain conflicts
-    hasAnyColConflicts: function () {},
+    hasAnyColConflicts: function () {
+      let size = this.get("n");
+      for (let i = 0; i < size; i++) {
+        if (this.hasColConflictAt(i)) {
+          return false;
+        }
+      }
+
+      return true;
+    },
 
     // Major Diagonals - go from top-left to bottom-right
     // --------------------------------------------------------------
