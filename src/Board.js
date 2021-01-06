@@ -150,7 +150,17 @@
     //
     // test if a specific column on this board contains a conflict
     hasColConflictAt: function (colIndex) {
-      let size = this.get("n");
+      let counter = 0;
+      for (let i = 0; i < this.attributes["n"]; i++) {
+        let array = this.get(i);
+        if (array[colIndex]) {
+          counter++;
+        }
+      }
+      if (counter > 1) {
+        return true;
+      }
+      return false;
     },
 
     // test if any columns on this board contain conflicts
