@@ -128,6 +128,9 @@
           counter++;
         }
       }
+      if (counter > 1) {
+        return true;
+      }
       return false; //fix me
     },
 
