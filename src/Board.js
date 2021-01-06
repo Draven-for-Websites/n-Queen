@@ -121,7 +121,13 @@
       let counter = 0;
       var index = majorDiagonalColumnIndexAtFirstRow;
       let n = this.attributes["n"];
-
+      for (var i = 0; i < n; i++) {
+        let row = this.get(i);
+        let col = row[index + i];
+        if (col === 1) {
+          counter++;
+        }
+      }
       return false; //fix me
     },
 
