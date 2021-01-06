@@ -213,9 +213,23 @@
     // --------------------------------------------------------------
     //
     // test if a specific minor diagonal on this board contains a conflict
-    hasMinorDiagonalConflictAt: function (
-      minorDiagonalColumnIndexAtFirstRow
-    ) {},
+    hasMinorDiagonalConflictAt: function (minorDiagonalColumnIndexAtFirstRow) {
+      let counter = 0;
+      var index = minorDiagonalColumnIndexAtFirstRow;
+      let n = this.attributes["n"];
+      for (var i = 0; i < n; i++) {
+        let array = this.get(i);
+        let coll = array[-i + index];
+        if (coll === 1) {
+          counter++;
+        }
+        // console.log(array);
+      }
+      if (counter > 1) {
+        return true;
+      }
+      return false;
+    },
 
     // test if any minor diagonals on this board contain conflicts
     hasAnyMinorDiagonalConflicts: function () {},
