@@ -118,6 +118,10 @@
     //
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function (rowIndex) {
+      let counter = 0;
+      var index = majorDiagonalColumnIndexAtFirstRow;
+      let n = this.attributes["n"];
+
       return false; //fix me
     },
 
