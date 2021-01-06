@@ -136,6 +136,8 @@
 
     // test if any rows on this board contain conflicts
     hasAnyRowConflicts: function () {
+      let size = this.get("n");
+
       return true; // fixme
     },
 
@@ -143,7 +145,9 @@
     // --------------------------------------------------------------
     //
     // test if a specific column on this board contains a conflict
-    hasColConflictAt: function (colIndex) {},
+    hasColConflictAt: function (colIndex) {
+      let size = this.get("n");
+    },
 
     // test if any columns on this board contain conflicts
     hasAnyColConflicts: function () {},
