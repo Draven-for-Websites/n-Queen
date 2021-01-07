@@ -17,10 +17,22 @@ window.findNRooksSolution = function (n) {
   if (row === n) {
     return callback();
   }
+
   // iterate over possible decisions
   for (var i = 0; i < n; i++) {
     // place a piece
+    board.togglePiece(row, i);
+    // recurse into remaining problem
+    if (!board[validator]()) {
+      var result = findSolution(row + 1, n, board, validator, callback);
+      if (result) {
+        return result; // EJECT
+      }
+    }
+    // unplace a piece
+    board.togglePiece(row, i);
   }
+  // iterate over possible decisions
   var solution = undefined; //fixme
 
   console.log("Single solution for " + n + " rooks:", JSON.stringify(solution));
