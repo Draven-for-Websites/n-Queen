@@ -13,6 +13,10 @@
 // return a matrix (an array of arrays) representing a single nxn chessboard, with n rooks placed such that none of them can attack each other
 
 window.findNRooksSolution = function (n) {
+  // if all rows exhausted, this is a valid solution.
+  if (row === n) {
+    return callback();
+  }
   var solution = undefined; //fixme
 
   console.log("Single solution for " + n + " rooks:", JSON.stringify(solution));
