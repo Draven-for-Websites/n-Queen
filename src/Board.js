@@ -232,13 +232,13 @@
     // test if any minor diagonals on this board contain conflicts
     hasAnyMinorDiagonalConflicts: function () {
       let size = this.get("n");
-      for (let i = 0; i < size; i++) {
+      for (let i = 0; i < size * 2; i++) {
         if (this.hasMinorDiagonalConflictAt(i)) {
-          return false;
+          return true;
         }
       }
 
-      return true;
+      return false;
     },
 
     /*--------------------  End of Helper Functions  ---------------------*/
