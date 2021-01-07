@@ -17,6 +17,10 @@ window.findNRooksSolution = function (n) {
   if (row === n) {
     return callback();
   }
+  // iterate over possible decisions
+  for (var i = 0; i < n; i++) {
+    // place a piece
+  }
   var solution = undefined; //fixme
 
   console.log("Single solution for " + n + " rooks:", JSON.stringify(solution));
