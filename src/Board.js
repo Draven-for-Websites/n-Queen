@@ -119,15 +119,12 @@
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function (rowIndex) {
       var array = this.get(rowIndex);
-      // console.log(rowIndex);
       let counter = 0;
       for (let i = 0; i < array.length; i++) {
         if (array[i]) {
           counter++;
-          console.log("this is the counter =>", counter);
         }
       }
-      console.log("==>", array);
       if (counter > 1) {
         return true;
       }
@@ -139,10 +136,11 @@
       let size = this.get("n");
       for (let i = 0; i < size; i++) {
         if (this.hasRowConflictAt(i)) {
-          return false;
+          return true;
         }
       }
-      return true; // fixme
+
+      return false; // fixme
     },
 
     // COLUMNS - run from top to bottom
@@ -168,11 +166,11 @@
       let size = this.get("n");
       for (let i = 0; i < size; i++) {
         if (this.hasColConflictAt(i)) {
-          return false;
+          return true;
         }
       }
 
-      return true;
+      return false;
     },
 
     // Major Diagonals - go from top-left to bottom-right
